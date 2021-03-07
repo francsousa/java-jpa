@@ -29,6 +29,9 @@ public class Movimentacao {
 	
 	private BigDecimal valor;
 	
+	@ManyToOne
+	public Conta conta;
+	
 	@ManyToMany
 	private List<Categoria> categorias;
 	
@@ -44,9 +47,6 @@ public class Movimentacao {
 		return categorias;
 	}
 	
-	@ManyToOne
-	public Conta conta;
-
 	public Conta getConta() {
 		return conta;
 	}
