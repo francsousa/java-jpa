@@ -3,6 +3,7 @@ package com.francisco.jpa.modelo;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Conta {
 	
 	private Double saldo;
 	
-	@OneToMany(mappedBy = "conta")
+	@OneToMany(mappedBy = "conta", fetch = FetchType.EAGER)
 	private List<Movimentacao> movimentacoes;
 	
 	public Double getSaldo() {
