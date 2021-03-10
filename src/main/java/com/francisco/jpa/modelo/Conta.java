@@ -16,11 +16,16 @@ public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private Integer agencia;
+	
 	private Integer numero;
+	
 	private String titular;
+	
 	private Double saldo;
-	@OneToMany
+	
+	@OneToMany(mappedBy = "conta")
 	private List<Movimentacao> movimentacoes;
 	
 	public Double getSaldo() {
